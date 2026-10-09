@@ -1,12 +1,34 @@
 #include <iostream>
+#include <string>
 
 int main(){
-    double C, F;
-    std::cout << "what is the temprature in celsius" << std::endl;
-    std::cin >> C;
 
-    F = C * 1.8 + 32;
+    double temp_in, temp_out;
+    std::string unit_in, unit_out;
 
-    std::cout << "the temperature is " << F << " farenheit";
-    
+
+    std::cin >> temp_in >>unit_in;
+
+    bool valid_unit = true;
+
+    if((unit_in == "c")||(unit_in == "C")){
+        unit_out = "F";
+        temp_out = (temp_in*1.8)+32;
+
+    }
+    else if( (unit_in == "F") || (unit_in == "f") ){ 
+        unit_out = "C";
+        temp_out = (temp_in-32)/1.8;
+    }
+    else{
+        valid_unit = false;
+    }
+
+
+    if(valid_unit){
+        std::cout << temp_out << " " << unit_out << std::endl;
+    }
+    else{
+        std::cout << "error, unit not recognised" << std::endl;
+    }
 }
