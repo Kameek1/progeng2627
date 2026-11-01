@@ -8,7 +8,6 @@ int main(){
 
     max = n;
     min = n;
-
     std::cout << "the maximum so far is: " << max << std::endl;
     std::cout << "the minimum so far is: " << min << std::endl;
     
